@@ -11,14 +11,78 @@ import copy
 import traceback
 import threading 
 
+
+def select_device():
+    if torch.cuda.is_available():
+        return "cuda"
+    mps_backend = getattr(torch.backends, "mps", None)
+    if mps_backend is not None and mps_backend.is_available():
+        return "mps"
+    return "cpu"
+
+
+def _sanitize_probabilities(probs: torch.Tensor) -> torch.Tensor:
+    """Ensure probs (1D or 2D) contain finite, normalized values."""
+    if not torch.is_floating_point(probs):
+        return probs
+    sanitized = torch.nan_to_num(probs, nan=0.0, posinf=0.0, neginf=0.0)
+    sanitized = sanitized.clamp_min(0.0)
+    if sanitized.ndim == 1:
+        total = sanitized.sum()
+        if total <= 0:
+            return torch.full_like(sanitized, 1.0 / sanitized.numel())
+        return sanitized / total
+    total = sanitized.sum(dim=-1, keepdim=True)
+    zero_mask = total <= 0
+    if zero_mask.any():
+        sanitized = sanitized.clone()
+        expanded_mask = zero_mask.expand(-1, sanitized.size(-1))
+        sanitized[expanded_mask] = 1.0
+        total = sanitized.sum(dim=-1, keepdim=True)
+    return sanitized / total
+
+
+def _flatten_probs_if_needed(probs: torch.Tensor):
+    if probs.ndim <= 2:
+        return probs, probs.shape
+    orig_shape = probs.shape
+    flat = probs.contiguous().view(-1, orig_shape[-1])
+    return flat, orig_shape
+
+
+def _reshape_samples_if_needed(samples: torch.Tensor, orig_shape, num_samples: int):
+    if len(orig_shape) <= 2:
+        return samples
+    return samples.view(*orig_shape[:-1], num_samples)
+
+
+_original_multinomial = torch.multinomial
+
+
+def _safe_multinomial(probs, num_samples, replacement=False, *, generator=None, out=None):
+    flat_probs, orig_shape = _flatten_probs_if_needed(probs)
+    normalized = _sanitize_probabilities(flat_probs)
+    samples = _original_multinomial(normalized, num_samples, replacement, generator=generator, out=out)
+    return _reshape_samples_if_needed(samples, orig_shape, num_samples)
+
+
+if not getattr(torch.multinomial, "_dream_safe", False):
+    _safe_multinomial._dream_safe = True  # type: ignore[attr-defined]
+    torch.multinomial = _safe_multinomial  # type: ignore[assignment]
+
 # --- Model Loading ---
 model_path = "Dream-org/Dream-v0-Instruct-7B"
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-print(f"Using device: {device}")
+device = select_device()
+dtype_by_device = {
+    "cuda": torch.bfloat16,
+    "mps": torch.float16,
+    "cpu": torch.float32,
+}
+dtype = dtype_by_device[device]
+print(f"Using device: {device} (dtype={dtype})")
 
 try:
-    print("Loading model with bfloat16...")
-    dtype = torch.bfloat16
+    print(f"Loading model with {dtype}...")
     model = AutoModel.from_pretrained(model_path, torch_dtype=dtype, trust_remote_code=True)
     print(f"Model loaded successfully with {dtype}.")
 except Exception as e:
@@ -40,7 +104,7 @@ mask_token_str = "[MASK]"
 
 # --- Move model to device ---
 try:
-    model = model.to(device).eval()
+    model = model.to(device=device, dtype=dtype).eval()
     print(f"Model moved to {device} and set to eval mode.")
 except Exception as e:
     print(f"Fatal Error moving model to device: {e}")
@@ -63,6 +127,10 @@ def add_user_message_to_gradio_history(history, message):
     if not history:
         history = []
     return history + [[message, None]]
+
+
+def highlight_message(message, color="#CC6666"):
+    return [(message, color)]
 
 # --- Modified Main Generation Function with Real-Time Visualization ---
 def dream_generate_with_visualization(history, max_new_tokens, steps, temperature, top_p, top_k, delay, alg, alg_temp):
@@ -87,7 +155,7 @@ def dream_generate_with_visualization(history, max_new_tokens, steps, temperatur
             current_history[-1][1] = f"Error: {error_message}"
         else:
             current_history = [["System", f"Error: {error_message}"]]
-        yield format_gradio_history_to_messages(current_history), error_message, current_history
+        yield format_gradio_history_to_messages(current_history), highlight_message(error_message), current_history
         return
 
     # save histories
@@ -172,7 +240,7 @@ def dream_generate_with_visualization(history, max_new_tokens, steps, temperatur
             current_history[-1][1] = f"Error: {error_message}"
         else:
             current_history = [["System", f"Error: {error_message}"]]
-        yield format_gradio_history_to_messages(current_history), error_message, current_history
+        yield format_gradio_history_to_messages(current_history), highlight_message(error_message), current_history
         return
 
     # --- final result processing ---
@@ -201,7 +269,7 @@ def dream_generate_with_visualization(history, max_new_tokens, steps, temperatur
             current_history[-1][1] = f"Error processing output: {error_message}"
         else:
             current_history = [["System", f"Error processing output: {error_message}"]]
-        yield format_gradio_history_to_messages(current_history), error_message, current_history
+        yield format_gradio_history_to_messages(current_history), highlight_message(error_message), current_history
 
     print("--- Exiting dream_generate_with_visualization normally ---")
 
@@ -209,7 +277,7 @@ def dream_generate_with_visualization(history, max_new_tokens, steps, temperatur
 def bot_response_generator(history, max_new_tokens, steps, temperature, top_p, top_k, delay, alg, alg_temp):
     if not history or history[-1][1] is not None:
         print("Skipping bot response: No history or last message already has a response.")
-        yield format_gradio_history_to_messages(history), "", history
+        yield format_gradio_history_to_messages(history), [], history
         return
     yield from dream_generate_with_visualization(history, max_new_tokens, steps, temperature, top_p, top_k, delay, alg, alg_temp)
 
@@ -258,7 +326,7 @@ with gr.Blocks(css=css, theme=gr.themes.Soft()) as demo:
     clear_button = gr.Button("Clear Chat")
 
     def clear_conversation():
-        return [], [], "", ""
+        return [], [], "", []
 
     clear_button.click(
         fn=clear_conversation,
@@ -282,11 +350,11 @@ with gr.Blocks(css=css, theme=gr.themes.Soft()) as demo:
     )
 
     submit_action = user_input_textbox.submit(**submit_event_args)
-    submit_action.then(lambda: "", inputs=None, outputs=[vis_output_display])
+    submit_action.then(lambda: [], inputs=None, outputs=[vis_output_display])
     submit_action.then(**bot_response_event_args)
 
     send_action = send_button.click(**submit_event_args)
-    send_action.then(lambda: "", inputs=None, outputs=[vis_output_display])
+    send_action.then(lambda: [], inputs=None, outputs=[vis_output_display])
     send_action.then(**bot_response_event_args)
 
 if __name__ == "__main__":

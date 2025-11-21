@@ -2,22 +2,43 @@ import time
 import torch
 from transformers import AutoModel, AutoTokenizer
 
+def select_device():
+    if torch.cuda.is_available():
+        return "cuda"
+    mps_backend = getattr(torch.backends, "mps", None)
+    if mps_backend is not None and mps_backend.is_available():
+        return "mps"
+    return "cpu"
+
+# --- Model Loading ---
 model_path = "Dream-org/Dream-v0-Instruct-7B"
-model = AutoModel.from_pretrained(model_path, torch_dtype=torch.bfloat16, trust_remote_code=True)
+device = select_device()
+dtype_by_device = {
+    "cuda": torch.bfloat16,
+    "mps": torch.float16,
+    "cpu": torch.float32,
+}
+dtype = dtype_by_device[device]
+print(f"Using device: {device} (dtype={dtype})")
+
+model_path = "Dream-org/Dream-v0-Instruct-7B"
+
+model = AutoModel.from_pretrained(model_path, torch_dtype=dtype, trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-model = model.to("cuda").eval()
+model = model.to(device).eval()
 
 # messages = [
 #     {"role": "user", "content": "Janet's ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"},
 # ]
+# Trimmed-down prompt to keep the compute light.
 messages = [
     {"role": "user", "content": "Please write a Python class that implements a PyTorch trainer capable of training a model on a toy dataset."}
 ]
 inputs = tokenizer.apply_chat_template(
     messages, return_tensors="pt", return_dict=True, add_generation_prompt=True
 )
-input_ids = inputs.input_ids.to(device="cuda")
-attention_mask = inputs.attention_mask.to(device="cuda")
+input_ids = inputs.input_ids.to(device)
+attention_mask = inputs.attention_mask.to(device)
 
 output = model.diffusion_generate(
     input_ids,

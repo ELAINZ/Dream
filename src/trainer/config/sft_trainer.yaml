@@ -16,6 +16,7 @@ data:
   pad_token_id: null
 model:
   partial_pretrain: ~/models/gemma-1.1-7b-it
+  partial_huggingface: "Qwen/Qwen3-0.6B"
   fsdp_config:
     wrap_policy:
       min_num_params: 0
@@ -40,6 +41,7 @@ use_remove_padding: False
 trainer:
   default_local_dir: /tmp/sft_model
   default_hdfs_dir: hdfs://tmp/experiments/gsm8k/gemma-1.1-7b-it/ # change the hdfs path here
+  resume_huggingface: True
   resume_path: null
   resume_training: False
   project_name: gsm8k-sft

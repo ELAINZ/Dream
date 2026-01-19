@@ -356,6 +356,7 @@ class FSDPSFTTrainer(object):
 
         # Check if resuming training
         self.resume_training = getattr(self.config.trainer, "resume_training", False)
+        self.resume_huggingface = getattr(self.config.trainer, "resume_huggingface", None)
         self.resume_checkpoint_path = getattr(self.config.trainer, "resume_path", None)
 
         # build tokenizer first
@@ -364,10 +365,12 @@ class FSDPSFTTrainer(object):
             local_model_path = copy_local_path_from_hdfs(
                 src=self.resume_checkpoint_path, verbose=True
             )
-        else:
+        elif not self.resume_huggingface:
             local_model_path = copy_local_path_from_hdfs(
                 src=self.config.model.partial_pretrain, verbose=True
             )
+        else:
+            local_model_path = self.config.model.partial_huggingface
 
         from verl.utils import hf_tokenizer
 
@@ -526,10 +529,12 @@ class FSDPSFTTrainer(object):
         # Determine which path to load from
         if checkpoint_path:
             local_model_path = checkpoint_path
-        else:
+        elif not self.resume_huggingface:
             local_model_path = copy_local_path_from_hdfs(
                 src=self.config.model.partial_pretrain, verbose=True
             )
+        else:
+            local_model_path = self.model.partial_huggingface
 
         if self.config.model.get("external_lib", None) is not None:
             # This is used to import external_lib into the huggingface systems

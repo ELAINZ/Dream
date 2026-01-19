@@ -730,6 +730,16 @@ class FSDPSFTTrainer(object):
 
     def _compute_loss_and_backward(self, batch, do_backward=True):
         """Compute loss with optional sequence parallelism and remove padding features"""
+
+        use_sp = (
+            self.use_remove_padding and self.config.ulysses_sequence_parallel_size > 1
+        )
+
+        input_ids = batch["input_ids"].cuda(non_blocking=True)
+        attention_mask = batch["attention_mask"].cuda(non_blocking=True).bool()
+        position_ids = batch["position_ids"].cuda(non_blocking=True)
+        loss_mask = batch["loss_mask"].cuda(non_blocking=True).bool()
+
         # 1. vocab size
         vocab_size = self.model.get_input_embeddings().num_embeddings
 
@@ -748,14 +758,6 @@ class FSDPSFTTrainer(object):
         # 5. loss_mask shape 必须和 input_ids 对齐
         assert loss_mask.shape == input_ids.shape
 
-        use_sp = (
-            self.use_remove_padding and self.config.ulysses_sequence_parallel_size > 1
-        )
-
-        input_ids = batch["input_ids"].cuda(non_blocking=True)
-        attention_mask = batch["attention_mask"].cuda(non_blocking=True).bool()
-        position_ids = batch["position_ids"].cuda(non_blocking=True)
-        loss_mask = batch["loss_mask"].cuda(non_blocking=True).bool()
 
         loss_fct = nn.CrossEntropyLoss(reduction="none")
         pad_eos_token_id = (

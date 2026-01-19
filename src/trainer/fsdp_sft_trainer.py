@@ -740,7 +740,13 @@ class FSDPSFTTrainer(object):
         position_ids = batch["position_ids"].cuda(non_blocking=True)
         loss_mask = batch["loss_mask"].cuda(non_blocking=True).bool()
 
-        # 1. vocab size
+        loss_fct = nn.CrossEntropyLoss(reduction="none")
+        pad_eos_token_id = (
+            self.config.data.pad_token_id
+            if self.config.data.pad_token_id is not None
+            else self.tokenizer.pad_token_id
+        )
+                # 1. vocab size
         vocab_size = self.model.get_input_embeddings().num_embeddings
 
         # 2. input_ids 必须合法
@@ -757,15 +763,7 @@ class FSDPSFTTrainer(object):
 
         # 5. loss_mask shape 必须和 input_ids 对齐
         assert loss_mask.shape == input_ids.shape
-
-
-        loss_fct = nn.CrossEntropyLoss(reduction="none")
-        pad_eos_token_id = (
-            self.config.data.pad_token_id
-            if self.config.data.pad_token_id is not None
-            else self.tokenizer.pad_token_id
-        )
-
+        
         # Context manager for sequence parallel if needed
         context = self.sharding_manager if use_sp else nullcontext()
         with context:

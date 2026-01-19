@@ -23,7 +23,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     optim.lr=2e-6 \
     data.micro_batch_size_per_gpu=8 \
     data.perbatch_cutoff_type=random_with_input_pad \
-    model.hugging_face=Dream-org/Dream-v0-Base-7B \
+    model.partial_huggingface="Qwen/Qwen3-0.6B" \
     model.trust_remote_code=True \
     model.enable_gradient_checkpointing=True \
     trainer.default_local_dir=test_exp \

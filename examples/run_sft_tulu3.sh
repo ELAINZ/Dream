@@ -17,8 +17,8 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     data.train_files=./data/gsm8k/train.parquet \
     data.val_files=./data/gsm8k/test.parquet \
     data.max_length=2048 \
-    data.prompt_key=prompt \
-    data.response_key=response \
+    data.prompt_key=question \
+    data.response_key=answer \
     data.truncation=right \
     optim.lr=2e-6 \
     data.micro_batch_size_per_gpu=8 \

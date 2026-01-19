@@ -784,6 +784,8 @@ class FSDPSFTTrainer(object):
                     assert pad_eos_token_id is not None
 
                     # 5. loss_mask shape 必须和 input_ids 对齐
+                    print(f"loss mask shape: {loss_mask.shape}")
+                    print(f"input_Ids shape: {input_ids.shape}")
                     assert loss_mask.shape == input_ids.shape
                     # 2d -> 4d conversion for attention_mask
                     attention_mask = torch.logical_and(

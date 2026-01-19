@@ -730,6 +730,24 @@ class FSDPSFTTrainer(object):
 
     def _compute_loss_and_backward(self, batch, do_backward=True):
         """Compute loss with optional sequence parallelism and remove padding features"""
+        # 1. vocab size
+        vocab_size = self.model.get_input_embeddings().num_embeddings
+
+        # 2. input_ids 必须合法
+        assert input_ids.max() < vocab_size, (
+            input_ids.max().item(), vocab_size
+        )
+        assert input_ids.min() >= 0
+
+        # 3. mask_token_id 必须合法
+        assert self.tokenizer.mask_token_id < vocab_size
+
+        # 4. pad_token_id 必须存在
+        assert pad_eos_token_id is not None
+
+        # 5. loss_mask shape 必须和 input_ids 对齐
+        assert loss_mask.shape == input_ids.shape
+
         use_sp = (
             self.use_remove_padding and self.config.ulysses_sequence_parallel_size > 1
         )

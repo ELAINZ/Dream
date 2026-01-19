@@ -751,7 +751,7 @@ class FSDPSFTTrainer(object):
                     labels = input_ids.contiguous()
 
                     # Dealing with mask token id
-                    if tokenizer.mask_token is None:
+                    if self.tokenizer.mask_token is None:
                         tokenizer.add_special_tokens({"mask_token": "<M>"})
                         model.resize_token_embeddings(len(tokenizer))
                     # Forward pass

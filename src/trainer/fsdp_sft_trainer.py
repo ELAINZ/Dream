@@ -578,6 +578,10 @@ class FSDPSFTTrainer(object):
                 trust_remote_code=trust_remote_code,
             )
 
+            if self.tokenizer.mask_token is None:
+                self.tokenizer.add_special_tokens({"mask_token": "<M>"})
+                self.model.resize_token_embeddings(len(self.tokenizer))
+
             # Apply Liger kernel if use_liger is enabled
             if self.config.model.get("use_liger", False):
                 from liger_kernel.transformers.monkey_patch import (
@@ -750,10 +754,6 @@ class FSDPSFTTrainer(object):
                     # Standard forward pass without sequence parallel
                     labels = input_ids.contiguous()
 
-                    # Dealing with mask token id
-                    if self.tokenizer.mask_token is None:
-                        self.tokenizer.add_special_tokens({"mask_token": "<M>"})
-                        self.fsdp_model.resize_token_embeddings(len(tokenizer))
                     # Forward pass
                     # NOTE: loss_mask is of size (batch_size, seq_len - 1)
                     batch_size = input_ids.shape[0]

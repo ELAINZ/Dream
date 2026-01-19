@@ -57,7 +57,7 @@ from verl.utils.fsdp_utils import (
 from verl.utils.model import compute_position_id_with_mask
 from verl.utils.torch_functional import get_cosine_schedule_with_warmup
 from verl.utils.tracking import Tracking
-from verl.workers.sharding_manager import FSDPUlyssesShardingManager
+from verl.workers.sharding_manager.ulysses import FSDPUlyssesShardingManager
 
 from src.diffllm.gen_utils import q_sample
 from src.trainer.sft_dataset import SFTDataset, TokenizedSFTDataset

@@ -22,7 +22,6 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     data.truncation=right \
     optim.lr=2e-6 \
     data.micro_batch_size_per_gpu=8 \
-    data.perbatch_cutoff=True \
     data.perbatch_cutoff_type=random_with_input_pad \
     +data.perbatch_cutoff=True \
     model.hugging_face=Dream-org/Dream-v0-Base-7B \

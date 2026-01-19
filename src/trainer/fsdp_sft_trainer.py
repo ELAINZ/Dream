@@ -753,6 +753,7 @@ class FSDPSFTTrainer(object):
                     # Dealing with mask token id
                     if self.tokenizer.mask_token is None:
                         self.tokenizer.add_special_tokens({"mask_token": "<M>"})
+                        self.fsdp_model.resize_token_embeddings(len(tokenizer))
                     # Forward pass
                     # NOTE: loss_mask is of size (batch_size, seq_len - 1)
                     batch_size = input_ids.shape[0]

@@ -750,13 +750,17 @@ class FSDPSFTTrainer(object):
                     # Standard forward pass without sequence parallel
                     labels = input_ids.contiguous()
 
+                    # Dealing with mask token id
+                    if tokenizer.mask_token is None:
+                        tokenizer.add_special_tokens({"mask_token": "<M>"})
+                        model.resize_token_embeddings(len(tokenizer))
                     # Forward pass
                     # NOTE: loss_mask is of size (batch_size, seq_len - 1)
                     batch_size = input_ids.shape[0]
                     masked_input_ids, t, loss_mask_nonflatten = q_sample(
                         input_ids,
                         maskable_mask=loss_mask,
-                        mask_token_id=self.tokenizer.mask_token_id if self.tokenizer.mask_token_id else 126336,
+                        mask_token_id=self.tokenizer.mask_token_id,
                         eos_token_id=(
                             pad_eos_token_id
                             if self.config.data.get("treat_eos_as_one", False)

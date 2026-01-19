@@ -746,24 +746,6 @@ class FSDPSFTTrainer(object):
             if self.config.data.pad_token_id is not None
             else self.tokenizer.pad_token_id
         )
-                # 1. vocab size
-        vocab_size = self.model.get_input_embeddings().num_embeddings
-
-        # 2. input_ids 必须合法
-        assert input_ids.max() < vocab_size, (
-            input_ids.max().item(), vocab_size
-        )
-        assert input_ids.min() >= 0
-
-        # 3. mask_token_id 必须合法
-        assert self.tokenizer.mask_token_id < vocab_size
-
-        # 4. pad_token_id 必须存在
-        assert pad_eos_token_id is not None
-
-        # 5. loss_mask shape 必须和 input_ids 对齐
-        assert loss_mask.shape == input_ids.shape
-        
         # Context manager for sequence parallel if needed
         context = self.sharding_manager if use_sp else nullcontext()
         with context:
@@ -786,7 +768,23 @@ class FSDPSFTTrainer(object):
                         ),
                     )
                     loss_mask = loss_mask_nonflatten.reshape(-1)
+                    # 1. vocab size
+                    vocab_size = self.model.get_input_embeddings().num_embeddings
 
+                    # 2. input_ids 必须合法
+                    assert input_ids.max() < vocab_size, (
+                        input_ids.max().item(), vocab_size
+                    )
+                    assert input_ids.min() >= 0
+
+                    # 3. mask_token_id 必须合法
+                    assert self.tokenizer.mask_token_id < vocab_size
+
+                    # 4. pad_token_id 必须存在
+                    assert pad_eos_token_id is not None
+
+                    # 5. loss_mask shape 必须和 input_ids 对齐
+                    assert loss_mask.shape == input_ids.shape
                     # 2d -> 4d conversion for attention_mask
                     attention_mask = torch.logical_and(
                         attention_mask.unsqueeze(1).unsqueeze(-2),

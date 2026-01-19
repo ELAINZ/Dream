@@ -756,7 +756,7 @@ class FSDPSFTTrainer(object):
                     masked_input_ids, t, loss_mask_nonflatten = q_sample(
                         input_ids,
                         maskable_mask=loss_mask,
-                        mask_token_id=self.tokenizer.mask_token_id,
+                        mask_token_id=self.tokenizer.mask_token_id if self.tokenizer.mask_token_id else 126336,
                         eos_token_id=(
                             pad_eos_token_id
                             if self.config.data.get("treat_eos_as_one", False)

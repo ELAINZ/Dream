@@ -49,7 +49,7 @@ trainer:
   total_training_steps: null
   logger: ['console']
   seed: 1
-  save_checkpoint_steps: 200
+  save_checkpoint_steps: 400
 diffusion:
   token_reweighting: false  # use focal loss for token-level reweighting
   alpha: 0.25  # for focal loss

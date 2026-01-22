@@ -1,0 +1,1 @@
+{"train/num_eos_max":52,"train/lr(1e-3)":0.0018384560876725162,"train/loss":0.144047349691391,"_runtime":687.547371965,"_wandb":{"runtime":687},"train/num_eos_mean":33.875,"_step":155,"_timestamp":1.769050279146997e+09,"train/grad_norm":2.281947612762451}

@@ -1,0 +1,14 @@
+Total training steps: 699
+Epoch 1/3:   5%|██████                                                                                                                | 12/233 [01:24<25:40,  6.97s/it]
+step:0 - train/loss:nan - train/lr(1e-3):5.88235294117647e-05 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:1 - train/loss:nan - train/lr(1e-3):0.0001176470588235294 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:2 - train/loss:nan - train/lr(1e-3):0.0001764705882352941 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:3 - train/loss:nan - train/lr(1e-3):0.0002352941176470588 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:4 - train/loss:nan - train/lr(1e-3):0.0002941176470588235 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:5 - train/loss:nan - train/lr(1e-3):0.0003529411764705882 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:6 - train/loss:nan - train/lr(1e-3):0.0004117647058823529 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:7 - train/loss:nan - train/lr(1e-3):0.0004705882352941176 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:8 - train/loss:nan - train/lr(1e-3):0.0005294117647058823 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:9 - train/loss:nan - train/lr(1e-3):0.000588235294117647 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:10 - train/loss:nan - train/lr(1e-3):0.0006470588235294117 - train/num_eos_mean:1.0 - train/num_eos_max:1.0
+step:11 - train/loss:nan - train/lr(1e-3):0.0007058823529411764 - train/num_eos_mean:1.0 - train/num_eos_max:1.0

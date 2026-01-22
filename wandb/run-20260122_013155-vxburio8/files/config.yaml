@@ -1,0 +1,101 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            z2zv3co63394lslpd8yhvj1cjcvitjvf:
+                args:
+                    - diffusion.time_reweighting=cart
+                    - data.train_files=./data/gsm8k/train.parquet
+                    - data.val_files=./data/gsm8k/test.parquet
+                    - data.max_length=32
+                    - data.prompt_key=question
+                    - data.response_key=answer
+                    - data.truncation=right
+                    - optim.lr=2e-6
+                    - data.micro_batch_size_per_gpu=1
+                    - data.perbatch_cutoff_type=random_with_input_pad
+                    - model.partial_huggingface=Qwen/Qwen3-0.6B
+                    - model.trust_remote_code=True
+                    - model.enable_gradient_checkpointing=True
+                    - trainer.logger=[console,wandb]
+                    - trainer.total_epochs=3
+                cpu_count: 64
+                cpu_count_logical: 128
+                cudaVersion: "12.7"
+                disk:
+                    /:
+                        total: "994242252800"
+                        used: "909322002432"
+                email: zhang2968@wisc.edu
+                executable: /home/zhang2968/anaconda3/envs/PN/bin/python3.11
+                git:
+                    commit: e153996b1c7826e9d45292f4907485761d0342ba
+                    remote: https://github.com/ELAINZ/Dream.git
+                gpu: NVIDIA RTX 6000 Ada Generation
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX 6000 Ada Generation
+                      uuid: GPU-36b34088-b201-134a-4ef8-2f000fe80db3
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX 6000 Ada Generation
+                      uuid: GPU-b63141d2-3f97-fd04-4eda-a086965b9f97
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX 6000 Ada Generation
+                      uuid: GPU-937fccda-225d-58f7-1223-b2b2edac4d81
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX 6000 Ada Generation
+                      uuid: GPU-505e6f3e-64f7-770e-f08f-cdddd44d1321
+                host: faistos
+                memory:
+                    total: "540618502144"
+                os: Linux-5.15.0-164-generic-x86_64-with-glibc2.35
+                program: -m src.trainer.fsdp_sft_trainer
+                python: CPython 3.11.13
+                root: /home/zhang2968/Dream
+                startedAt: "2026-01-22T01:31:55.812583Z"
+                writerId: z2zv3co63394lslpd8yhvj1cjcvitjvf
+        m: []
+        python_version: 3.11.13
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 30
+                - 41
+                - 49
+                - 50
+                - 51
+                - 53
+                - 71
+                - 98
+                - 105
+            "2":
+                - 1
+                - 5
+                - 11
+                - 30
+                - 41
+                - 49
+                - 50
+                - 51
+                - 53
+                - 71
+                - 98
+                - 105
+            "3":
+                - 13
+            "4": 3.11.13
+            "5": 0.22.3
+            "6": 4.57.3
+            "12": 0.22.3
+            "13": linux-x86_64

@@ -44,7 +44,7 @@ from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
 from torch.distributed.fsdp import MixedPrecision, ShardingStrategy
 from torch.utils.data import DataLoader, DistributedSampler
 from tqdm import tqdm
-from transformers import AutoConfig, AutoModel, PreTrainedModel
+from transformers import AutoConfig, AutoModelForCausalLM, PreTrainedModel
 from verl.trainer.fsdp_sft_trainer import FSDPSFTTrainer
 from verl.utils.debug import log_gpu_memory_usage
 from verl.utils.distributed import initialize_global_process_group
@@ -570,7 +570,7 @@ class FSDPSFTTrainer(object):
         )
 
         with init_context():
-            self.model: PreTrainedModel = AutoModel.from_pretrained(
+            self.model: PreTrainedModel = AutoModelForCausalLM.from_pretrained(
                 local_model_path,
                 config=config,
                 torch_dtype=torch.float32,
@@ -580,7 +580,7 @@ class FSDPSFTTrainer(object):
 
             if self.tokenizer.mask_token is None:
                 self.tokenizer.add_special_tokens({"mask_token": "<M>"})
-                self.model.resize_token_embeddings(len(self.tokenizer))
+                # self.model.resize_token_embeddings(len(self.tokenizer))
 
             # Apply Liger kernel if use_liger is enabled
             if self.config.model.get("use_liger", False):

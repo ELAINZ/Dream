@@ -1,0 +1,234 @@
+Total training steps: 699
+Epoch 1/3:  13%|███████████████▋                                                                                                      | 31/233 [02:13<14:20,  4.26s/it]
+step:0 - train/loss:4.741619110107422 - train/lr(1e-3):5.88235294117647e-05 - train/num_eos_mean:60.9375 - train/num_eos_max:89.0
+step:1 - train/loss:4.391645431518555 - train/lr(1e-3):0.0001176470588235294 - train/num_eos_mean:137.0625 - train/num_eos_max:168.0
+step:2 - train/loss:5.364567279815674 - train/lr(1e-3):0.0001764705882352941 - train/num_eos_mean:27.5 - train/num_eos_max:52.0
+step:3 - train/loss:4.873745918273926 - train/lr(1e-3):0.0002352941176470588 - train/num_eos_mean:52.125 - train/num_eos_max:84.0
+step:4 - train/loss:4.999502182006836 - train/lr(1e-3):0.0002941176470588235 - train/num_eos_mean:45.1875 - train/num_eos_max:74.0
+step:5 - train/loss:4.515091419219971 - train/lr(1e-3):0.0003529411764705882 - train/num_eos_mean:20.0625 - train/num_eos_max:37.0
+step:6 - train/loss:4.247105121612549 - train/lr(1e-3):0.0004117647058823529 - train/num_eos_mean:37.6875 - train/num_eos_max:67.0
+step:7 - train/loss:3.744415283203125 - train/lr(1e-3):0.0004705882352941176 - train/num_eos_mean:45.1875 - train/num_eos_max:77.0
+step:8 - train/loss:4.275201320648193 - train/lr(1e-3):0.0005294117647058823 - train/num_eos_mean:20.6875 - train/num_eos_max:52.0
+step:9 - train/loss:5.701455116271973 - train/lr(1e-3):0.000588235294117647 - train/num_eos_mean:38.0 - train/num_eos_max:66.0
+step:10 - train/loss:4.785305976867676 - train/lr(1e-3):0.0006470588235294117 - train/num_eos_mean:78.4375 - train/num_eos_max:108.0
+step:11 - train/loss:4.300621509552002 - train/lr(1e-3):0.0007058823529411764 - train/num_eos_mean:54.1875 - train/num_eos_max:87.0
+step:12 - train/loss:4.067951202392578 - train/lr(1e-3):0.0007647058823529411 - train/num_eos_mean:40.0 - train/num_eos_max:66.0
+step:13 - train/loss:3.2178268432617188 - train/lr(1e-3):0.0008235294117647058 - train/num_eos_mean:49.9375 - train/num_eos_max:70.0
+step:14 - train/loss:2.6554436683654785 - train/lr(1e-3):0.0008823529411764705 - train/num_eos_mean:43.875 - train/num_eos_max:76.0
+step:15 - train/loss:3.622920036315918 - train/lr(1e-3):0.0009411764705882352 - train/num_eos_mean:44.6875 - train/num_eos_max:67.0
+step:16 - train/loss:4.043890953063965 - train/lr(1e-3):0.001 - train/num_eos_mean:40.5625 - train/num_eos_max:70.0
+step:17 - train/loss:2.632488250732422 - train/lr(1e-3):0.0010588235294117646 - train/num_eos_mean:33.25 - train/num_eos_max:55.0
+step:18 - train/loss:1.6779301166534424 - train/lr(1e-3):0.0011176470588235294 - train/num_eos_mean:73.4375 - train/num_eos_max:96.0
+step:19 - train/loss:1.3933558464050293 - train/lr(1e-3):0.001176470588235294 - train/num_eos_mean:50.9375 - train/num_eos_max:84.0
+step:20 - train/loss:1.3863964080810547 - train/lr(1e-3):0.0012352941176470588 - train/num_eos_mean:57.125 - train/num_eos_max:90.0
+step:21 - train/loss:1.276957631111145 - train/lr(1e-3):0.0012941176470588234 - train/num_eos_mean:40.125 - train/num_eos_max:78.0
+step:22 - train/loss:1.1381480693817139 - train/lr(1e-3):0.0013529411764705882 - train/num_eos_mean:70.9375 - train/num_eos_max:101.0
+step:23 - train/loss:1.4577391147613525 - train/lr(1e-3):0.0014117647058823528 - train/num_eos_mean:40.875 - train/num_eos_max:67.0
+step:24 - train/loss:1.0980627536773682 - train/lr(1e-3):0.0014705882352941176 - train/num_eos_mean:35.0625 - train/num_eos_max:62.0
+step:25 - train/loss:1.1593811511993408 - train/lr(1e-3):0.0015294117647058822 - train/num_eos_mean:59.125 - train/num_eos_max:91.0
+step:26 - train/loss:1.4531817436218262 - train/lr(1e-3):0.001588235294117647 - train/num_eos_mean:40.0 - train/num_eos_max:63.0
+step:27 - train/loss:1.1990900039672852 - train/lr(1e-3):0.0016470588235294116 - train/num_eos_mean:51.875 - train/num_eos_max:94.0
+step:28 - train/loss:1.3162587881088257 - train/lr(1e-3):0.0017058823529411764 - train/num_eos_mean:42.0625 - train/num_eos_max:72.0
+step:29 - train/loss:0.8847801685333252 - train/lr(1e-3):0.001764705882352941 - train/num_eos_mean:72.4375 - train/num_eos_max:100.0
+step:30 - train/loss:nan - train/lr(1e-3):0.0018235294117647058 - train/num_eos_mean:52.4375 - train/num_eos_max:72.0
+step:31 - train/loss:0.7945208549499512 - train/lr(1e-3):0.0018823529411764704 - train/num_eos_mean:48.3125 - train/num_eos_max:71.0
+step:32 - train/loss:0.6987797021865845 - train/lr(1e-3):0.0019411764705882352 - train/num_eos_mean:42.9375 - train/num_eos_max:70.0
+step:33 - train/loss:1.0205625295639038 - train/lr(1e-3):0.002 - train/num_eos_mean:56.3125 - train/num_eos_max:78.0
+step:34 - train/loss:0.7187607288360596 - train/lr(1e-3):0.001999988840990395 - train/num_eos_mean:91.0625 - train/num_eos_max:127.0
+step:35 - train/loss:0.6415866017341614 - train/lr(1e-3):0.0019999553642106264 - train/num_eos_mean:29.875 - train/num_eos_max:56.0
+step:36 - train/loss:0.6253541707992554 - train/lr(1e-3):0.00199989957040783 - train/num_eos_mean:23.375 - train/num_eos_max:38.0
+step:37 - train/loss:0.6251521706581116 - train/lr(1e-3):0.0019998214608272133 - train/num_eos_mean:47.875 - train/num_eos_max:82.0
+step:38 - train/loss:0.47611403465270996 - train/lr(1e-3):0.001999721037212027 - train/num_eos_mean:58.25 - train/num_eos_max:87.0
+step:39 - train/loss:0.37583136558532715 - train/lr(1e-3):0.0019995983018035275 - train/num_eos_mean:49.6875 - train/num_eos_max:75.0
+step:40 - train/loss:0.47354060411453247 - train/lr(1e-3):0.001999453257340926 - train/num_eos_mean:23.5 - train/num_eos_max:47.0
+step:41 - train/loss:0.3815678358078003 - train/lr(1e-3):0.001999285907061327 - train/num_eos_mean:27.0625 - train/num_eos_max:52.0
+step:42 - train/loss:0.4995427429676056 - train/lr(1e-3):0.0019990962546996578 - train/num_eos_mean:47.1875 - train/num_eos_max:74.0
+step:43 - train/loss:0.3722224533557892 - train/lr(1e-3):0.001998884304488584 - train/num_eos_mean:22.4375 - train/num_eos_max:41.0
+step:44 - train/loss:0.3688441216945648 - train/lr(1e-3):0.001998650061158413 - train/num_eos_mean:42.8125 - train/num_eos_max:66.0
+step:45 - train/loss:0.3590260446071625 - train/lr(1e-3):0.0019983935299369934 - train/num_eos_mean:41.8125 - train/num_eos_max:70.0
+step:46 - train/loss:0.37637025117874146 - train/lr(1e-3):0.0019981147165495927 - train/num_eos_mean:43.875 - train/num_eos_max:67.0
+step:47 - train/loss:nan - train/lr(1e-3):0.0019978136272187745 - train/num_eos_mean:63.625 - train/num_eos_max:92.0
+step:48 - train/loss:0.4625059962272644 - train/lr(1e-3):0.0019974902686642555 - train/num_eos_mean:51.8125 - train/num_eos_max:81.0
+step:49 - train/loss:0.3885245621204376 - train/lr(1e-3):0.001997144648102759 - train/num_eos_mean:64.0625 - train/num_eos_max:89.0
+step:50 - train/loss:0.3073086142539978 - train/lr(1e-3):0.0019967767732478503 - train/num_eos_mean:37.0625 - train/num_eos_max:72.0
+step:51 - train/loss:0.3368033170700073 - train/lr(1e-3):0.001996386652309768 - train/num_eos_mean:44.625 - train/num_eos_max:75.0
+step:52 - train/loss:0.33231860399246216 - train/lr(1e-3):0.001995974293995239 - train/num_eos_mean:44.625 - train/num_eos_max:78.0
+step:53 - train/loss:0.37208569049835205 - train/lr(1e-3):0.0019955397075072834 - train/num_eos_mean:41.5 - train/num_eos_max:79.0
+step:54 - train/loss:0.23692937195301056 - train/lr(1e-3):0.0019950829025450114 - train/num_eos_mean:30.5625 - train/num_eos_max:61.0
+step:55 - train/loss:nan - train/lr(1e-3):0.001994603889303404 - train/num_eos_mean:41.375 - train/num_eos_max:71.0
+step:56 - train/loss:nan - train/lr(1e-3):0.0019941026784730895 - train/num_eos_mean:48.5 - train/num_eos_max:73.0
+step:57 - train/loss:0.247225821018219 - train/lr(1e-3):0.0019935792812400994 - train/num_eos_mean:47.5625 - train/num_eos_max:77.0
+step:58 - train/loss:0.29030969738960266 - train/lr(1e-3):0.001993033709285624 - train/num_eos_mean:44.75 - train/num_eos_max:71.0
+step:59 - train/loss:0.23928767442703247 - train/lr(1e-3):0.001992465974785748 - train/num_eos_mean:46.5625 - train/num_eos_max:71.0
+step:60 - train/loss:nan - train/lr(1e-3):0.001991876090411181 - train/num_eos_mean:64.9375 - train/num_eos_max:87.0
+step:61 - train/loss:0.2425210028886795 - train/lr(1e-3):0.001991264069326975 - train/num_eos_mean:36.1875 - train/num_eos_max:57.0
+step:62 - train/loss:0.2357555627822876 - train/lr(1e-3):0.001990629925192227 - train/num_eos_mean:41.375 - train/num_eos_max:70.0
+step:63 - train/loss:0.3002142608165741 - train/lr(1e-3):0.0019899736721597787 - train/num_eos_mean:66.375 - train/num_eos_max:91.0
+step:64 - train/loss:0.30724412202835083 - train/lr(1e-3):0.0019892953248758964 - train/num_eos_mean:58.9375 - train/num_eos_max:91.0
+step:65 - train/loss:0.21419978141784668 - train/lr(1e-3):0.00198859489847995 - train/num_eos_mean:38.0625 - train/num_eos_max:57.0
+step:66 - train/loss:0.2918422222137451 - train/lr(1e-3):0.001987872408604068 - train/num_eos_mean:35.375 - train/num_eos_max:69.0
+step:67 - train/loss:0.2628345489501953 - train/lr(1e-3):0.0019871278713727934 - train/num_eos_mean:68.5 - train/num_eos_max:107.0
+step:68 - train/loss:0.2818208932876587 - train/lr(1e-3):0.0019863613034027225 - train/num_eos_mean:51.8125 - train/num_eos_max:77.0
+step:69 - train/loss:0.26221686601638794 - train/lr(1e-3):0.001985572721802134 - train/num_eos_mean:68.125 - train/num_eos_max:96.0
+step:70 - train/loss:0.29738250374794006 - train/lr(1e-3):0.001984762144170607 - train/num_eos_mean:57.625 - train/num_eos_max:92.0
+step:71 - train/loss:0.27369341254234314 - train/lr(1e-3):0.0019839295885986296 - train/num_eos_mean:34.875 - train/num_eos_max:66.0
+step:72 - train/loss:0.3478274643421173 - train/lr(1e-3):0.001983075073667192 - train/num_eos_mean:37.5 - train/num_eos_max:57.0
+step:73 - train/loss:0.24868297576904297 - train/lr(1e-3):0.0019821986184473755 - train/num_eos_mean:40.0625 - train/num_eos_max:69.0
+step:74 - train/loss:0.216507226228714 - train/lr(1e-3):0.001981300242499924 - train/num_eos_mean:33.25 - train/num_eos_max:53.0
+step:75 - train/loss:0.25823044776916504 - train/lr(1e-3):0.0019803799658748094 - train/num_eos_mean:68.1875 - train/num_eos_max:99.0
+step:76 - train/loss:0.23548123240470886 - train/lr(1e-3):0.001979437809110783 - train/num_eos_mean:61.9375 - train/num_eos_max:100.0
+step:77 - train/loss:0.2090778648853302 - train/lr(1e-3):0.0019784737932349175 - train/num_eos_mean:84.125 - train/num_eos_max:115.0
+step:78 - train/loss:0.2791409194469452 - train/lr(1e-3):0.0019774879397621383 - train/num_eos_mean:26.9375 - train/num_eos_max:58.0
+step:79 - train/loss:0.25470301508903503 - train/lr(1e-3):0.001976480270694742 - train/num_eos_mean:87.75 - train/num_eos_max:120.0
+step:80 - train/loss:0.22227025032043457 - train/lr(1e-3):0.0019754508085219054 - train/num_eos_mean:54.875 - train/num_eos_max:85.0
+step:81 - train/loss:0.24786525964736938 - train/lr(1e-3):0.0019743995762191856 - train/num_eos_mean:31.0 - train/num_eos_max:59.0
+step:82 - train/loss:0.23066005110740662 - train/lr(1e-3):0.001973326597248006 - train/num_eos_mean:44.5 - train/num_eos_max:65.0
+step:83 - train/loss:0.23443934321403503 - train/lr(1e-3):0.00197223189555513 - train/num_eos_mean:48.125 - train/num_eos_max:68.0
+step:84 - train/loss:0.19976967573165894 - train/lr(1e-3):0.0019711154955721335 - train/num_eos_mean:54.0625 - train/num_eos_max:81.0
+step:85 - train/loss:0.207537442445755 - train/lr(1e-3):0.001969977422214851 - train/num_eos_mean:31.1875 - train/num_eos_max:57.0
+step:86 - train/loss:0.2708486318588257 - train/lr(1e-3):0.001968817700882826 - train/num_eos_mean:79.5 - train/num_eos_max:117.0
+step:87 - train/loss:0.2614557147026062 - train/lr(1e-3):0.0019676363574587415 - train/num_eos_mean:120.125 - train/num_eos_max:157.0
+step:88 - train/loss:0.2340548187494278 - train/lr(1e-3):0.0019664334183078424 - train/num_eos_mean:41.375 - train/num_eos_max:65.0
+step:89 - train/loss:0.2038365602493286 - train/lr(1e-3):0.0019652089102773483 - train/num_eos_mean:67.0625 - train/num_eos_max:96.0
+step:90 - train/loss:0.2513473629951477 - train/lr(1e-3):0.001963962860695853 - train/num_eos_mean:85.3125 - train/num_eos_max:126.0
+step:91 - train/loss:0.2221796214580536 - train/lr(1e-3):0.001962695297372715 - train/num_eos_mean:37.375 - train/num_eos_max:78.0
+step:92 - train/loss:0.20458710193634033 - train/lr(1e-3):0.001961406248597436 - train/num_eos_mean:48.1875 - train/num_eos_max:80.0
+step:93 - train/loss:0.2530747950077057 - train/lr(1e-3):0.0019600957431390323 - train/num_eos_mean:71.9375 - train/num_eos_max:112.0
+step:94 - train/loss:0.2302103489637375 - train/lr(1e-3):0.0019587638102453895 - train/num_eos_mean:75.375 - train/num_eos_max:112.0
+step:95 - train/loss:0.20888692140579224 - train/lr(1e-3):0.0019574104796426122 - train/num_eos_mean:40.75 - train/num_eos_max:71.0
+step:96 - train/loss:0.22034358978271484 - train/lr(1e-3):0.0019560357815343577 - train/num_eos_mean:87.5 - train/num_eos_max:117.0
+step:97 - train/loss:0.14772719144821167 - train/lr(1e-3):0.0019546397466011648 - train/num_eos_mean:84.6875 - train/num_eos_max:110.0
+step:98 - train/loss:0.2031567245721817 - train/lr(1e-3):0.001953222405999769 - train/num_eos_mean:22.6875 - train/num_eos_max:40.0
+step:99 - train/loss:0.18037380278110504 - train/lr(1e-3):0.0019517837913624045 - train/num_eos_mean:73.375 - train/num_eos_max:105.0
+step:100 - train/loss:0.19632545113563538 - train/lr(1e-3):0.0019503239347961005 - train/num_eos_mean:46.75 - train/num_eos_max:73.0
+step:101 - train/loss:0.17601706087589264 - train/lr(1e-3):0.0019488428688819637 - train/num_eos_mean:22.875 - train/num_eos_max:51.0
+step:102 - train/loss:0.1968107968568802 - train/lr(1e-3):0.0019473406266744514 - train/num_eos_mean:44.6875 - train/num_eos_max:67.0
+step:103 - train/loss:0.19115497171878815 - train/lr(1e-3):0.0019458172417006346 - train/num_eos_mean:41.4375 - train/num_eos_max:75.0
+step:104 - train/loss:0.2220807522535324 - train/lr(1e-3):0.0019442727479594482 - train/num_eos_mean:29.4375 - train/num_eos_max:61.0
+step:105 - train/loss:0.19721978902816772 - train/lr(1e-3):0.001942707179920933 - train/num_eos_mean:60.3125 - train/num_eos_max:97.0
+step:106 - train/loss:0.20130842924118042 - train/lr(1e-3):0.001941120572525467 - train/num_eos_mean:18.8125 - train/num_eos_max:38.0
+step:107 - train/loss:0.16601334512233734 - train/lr(1e-3):0.0019395129611829843 - train/num_eos_mean:51.0625 - train/num_eos_max:81.0
+step:108 - train/loss:0.19279074668884277 - train/lr(1e-3):0.0019378843817721854 - train/num_eos_mean:48.75 - train/num_eos_max:70.0
+step:109 - train/loss:0.20597349107265472 - train/lr(1e-3):0.0019362348706397372 - train/num_eos_mean:50.75 - train/num_eos_max:71.0
+step:110 - train/loss:0.21939167380332947 - train/lr(1e-3):0.0019345644645994608 - train/num_eos_mean:93.0 - train/num_eos_max:131.0
+step:111 - train/loss:0.19405540823936462 - train/lr(1e-3):0.0019328732009315105 - train/num_eos_mean:62.8125 - train/num_eos_max:96.0
+step:112 - train/loss:0.19214767217636108 - train/lr(1e-3):0.0019311611173815405 - train/num_eos_mean:29.5 - train/num_eos_max:42.0
+step:113 - train/loss:nan - train/lr(1e-3):0.0019294282521598656 - train/num_eos_mean:83.125 - train/num_eos_max:118.0
+step:114 - train/loss:0.21032005548477173 - train/lr(1e-3):0.0019276746439406045 - train/num_eos_mean:47.4375 - train/num_eos_max:76.0
+step:115 - train/loss:0.20147281885147095 - train/lr(1e-3):0.001925900331860819 - train/num_eos_mean:38.8125 - train/num_eos_max:61.0
+step:116 - train/loss:0.20300526916980743 - train/lr(1e-3):0.0019241053555196404 - train/num_eos_mean:51.0 - train/num_eos_max:79.0
+step:117 - train/loss:0.1825111210346222 - train/lr(1e-3):0.0019222897549773846 - train/num_eos_mean:38.6875 - train/num_eos_max:69.0
+step:118 - train/loss:0.1619563102722168 - train/lr(1e-3):0.0019204535707546602 - train/num_eos_mean:45.1875 - train/num_eos_max:68.0
+step:119 - train/loss:0.21029555797576904 - train/lr(1e-3):0.0019185968438314614 - train/num_eos_mean:37.4375 - train/num_eos_max:72.0
+step:120 - train/loss:0.17497962713241577 - train/lr(1e-3):0.0019167196156462557 - train/num_eos_mean:46.8125 - train/num_eos_max:78.0
+step:121 - train/loss:0.17294485867023468 - train/lr(1e-3):0.0019148219280950575 - train/num_eos_mean:72.3125 - train/num_eos_max:93.0
+step:122 - train/loss:0.21553680300712585 - train/lr(1e-3):0.0019129038235304945 - train/num_eos_mean:37.3125 - train/num_eos_max:63.0
+step:123 - train/loss:0.2110080122947693 - train/lr(1e-3):0.0019109653447608606 - train/num_eos_mean:27.6875 - train/num_eos_max:54.0
+step:124 - train/loss:0.20987340807914734 - train/lr(1e-3):0.0019090065350491625 - train/num_eos_mean:16.6875 - train/num_eos_max:38.0
+step:125 - train/loss:0.20654729008674622 - train/lr(1e-3):0.001907027438112153 - train/num_eos_mean:57.5 - train/num_eos_max:81.0
+step:126 - train/loss:nan - train/lr(1e-3):0.0019050280981193555 - train/num_eos_mean:46.6875 - train/num_eos_max:81.0
+step:127 - train/loss:0.1897464394569397 - train/lr(1e-3):0.0019030085596920784 - train/num_eos_mean:22.75 - train/num_eos_max:54.0
+step:128 - train/loss:0.16867196559906006 - train/lr(1e-3):0.0019009688679024188 - train/num_eos_mean:37.1875 - train/num_eos_max:57.0
+step:129 - train/loss:0.20095862448215485 - train/lr(1e-3):0.0018989090682722581 - train/num_eos_mean:33.5 - train/num_eos_max:60.0
+step:130 - train/loss:0.18694506585597992 - train/lr(1e-3):0.0018968292067722433 - train/num_eos_mean:36.25 - train/num_eos_max:57.0
+step:131 - train/loss:0.1752133071422577 - train/lr(1e-3):0.0018947293298207633 - train/num_eos_mean:19.75 - train/num_eos_max:46.0
+step:132 - train/loss:0.14762824773788452 - train/lr(1e-3):0.0018926094842829126 - train/num_eos_mean:55.1875 - train/num_eos_max:78.0
+step:133 - train/loss:0.16840776801109314 - train/lr(1e-3):0.0018904697174694446 - train/num_eos_mean:45.0625 - train/num_eos_max:71.0
+step:134 - train/loss:0.16705289483070374 - train/lr(1e-3):0.0018883100771357156 - train/num_eos_mean:36.8125 - train/num_eos_max:62.0
+step:135 - train/loss:0.1543494164943695 - train/lr(1e-3):0.0018861306114806209 - train/num_eos_mean:41.0 - train/num_eos_max:67.0
+step:136 - train/loss:0.14977508783340454 - train/lr(1e-3):0.0018839313691455162 - train/num_eos_mean:58.8125 - train/num_eos_max:90.0
+step:137 - train/loss:0.15319164097309113 - train/lr(1e-3):0.0018817123992131343 - train/num_eos_mean:35.5625 - train/num_eos_max:57.0
+step:138 - train/loss:0.18010255694389343 - train/lr(1e-3):0.0018794737512064887 - train/num_eos_mean:56.25 - train/num_eos_max:87.0
+step:139 - train/loss:0.15847359597682953 - train/lr(1e-3):0.0018772154750877695 - train/num_eos_mean:44.0625 - train/num_eos_max:71.0
+step:140 - train/loss:nan - train/lr(1e-3):0.0018749376212572253 - train/num_eos_mean:80.0 - train/num_eos_max:105.0
+step:141 - train/loss:0.17382918298244476 - train/lr(1e-3):0.0018726402405520423 - train/num_eos_mean:35.625 - train/num_eos_max:61.0
+step:142 - train/loss:0.16113877296447754 - train/lr(1e-3):0.0018703233842452072 - train/num_eos_mean:41.5625 - train/num_eos_max:75.0
+step:143 - train/loss:0.17662163078784943 - train/lr(1e-3):0.0018679871040443632 - train/num_eos_mean:45.125 - train/num_eos_max:64.0
+step:144 - train/loss:0.1595553755760193 - train/lr(1e-3):0.0018656314520906568 - train/num_eos_mean:30.1875 - train/num_eos_max:50.0
+step:145 - train/loss:0.22967016696929932 - train/lr(1e-3):0.0018632564809575739 - train/num_eos_mean:31.25 - train/num_eos_max:57.0
+step:146 - train/loss:0.1721305251121521 - train/lr(1e-3):0.0018608622436497653 - train/num_eos_mean:43.6875 - train/num_eos_max:68.0
+step:147 - train/loss:0.1747092306613922 - train/lr(1e-3):0.001858448793601866 - train/num_eos_mean:20.125 - train/num_eos_max:33.0
+step:148 - train/loss:0.1840621829032898 - train/lr(1e-3):0.0018560161846773 - train/num_eos_mean:43.6875 - train/num_eos_max:72.0
+step:149 - train/loss:nan - train/lr(1e-3):0.0018535644711670802 - train/num_eos_mean:40.375 - train/num_eos_max:69.0
+step:150 - train/loss:0.17125454545021057 - train/lr(1e-3):0.0018510937077885958 - train/num_eos_mean:33.0 - train/num_eos_max:56.0
+step:151 - train/loss:0.14746934175491333 - train/lr(1e-3):0.0018486039496843907 - train/num_eos_mean:25.625 - train/num_eos_max:41.0
+step:152 - train/loss:0.163294717669487 - train/lr(1e-3):0.0018460952524209354 - train/num_eos_mean:42.0 - train/num_eos_max:64.0
+step:153 - train/loss:0.15262222290039062 - train/lr(1e-3):0.0018435676719873826 - train/num_eos_mean:57.0 - train/num_eos_max:75.0
+step:154 - train/loss:0.18043753504753113 - train/lr(1e-3):0.0018410212647943214 - train/num_eos_mean:62.5 - train/num_eos_max:96.0
+step:155 - train/loss:0.144047349691391 - train/lr(1e-3):0.0018384560876725162 - train/num_eos_mean:33.875 - train/num_eos_max:52.0
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 1167, in <module>
+    main()
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+           ^^^^^^
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            ^^^^^^^^^^
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+          ^^^^^^^^
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 1163, in main
+    trainer.fit()
+  File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 1084, in fit
+    metric = self.training_step(data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 862, in training_step
+    loss.backward()
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/torch/_tensor.py", line 647, in backward
+    torch.autograd.backward(
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/torch/autograd/__init__.py", line 354, in backward
+    _engine_run_backward(
+  File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank0]:   File "<frozen runpy>", line 88, in _run_code
+[rank0]:   File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 1167, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank0]:     _run_hydra(
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank0]:     _run_app(
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank0]:     run_and_report(
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank0]:     return func()
+[rank0]:            ^^^^^^
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank0]:     lambda: hydra.run(
+[rank0]:             ^^^^^^^^^^
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 119, in run
+[rank0]:     ret = run_job(
+[rank0]:           ^^^^^^^^
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank0]:     ret.return_value = task_function(task_cfg)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 1163, in main
+[rank0]:     trainer.fit()
+[rank0]:   File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 1084, in fit
+[rank0]:     metric = self.training_step(data)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 862, in training_step
+[rank0]:     loss.backward()
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/torch/_tensor.py", line 647, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/torch/autograd/__init__.py", line 354, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/zhang2968/anaconda3/envs/PN/lib/python3.11/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

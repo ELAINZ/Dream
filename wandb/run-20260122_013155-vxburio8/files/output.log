@@ -1,0 +1,26 @@
+Total training steps: 699
+Epoch 1/3:   0%|                                                                                                                               | 0/233 [00:00<?, ?it/s]
+keys: odict_keys(['last_hidden_state'])
+DEBUG: odict_items([('last_hidden_state', tensor([[[ -3.4688, -25.5000,   0.1777,  ...,  -1.6797,   9.6875,   0.1914],
+         [ -1.9844,  -8.1875,   0.2129,  ...,  -3.1250,  10.3750,  -1.0312],
+         [ -1.4844,  -8.0000,   0.1992,  ...,  -2.2969,   9.4375,  -0.5352],
+         ...,
+         [ -1.7734,   0.7188,   0.1045,  ...,  -2.2969,   4.5000,  -0.2656],
+         [ -1.6172,   8.8125,   0.1152,  ...,  -1.8594,   3.2969,   1.7500],
+         [ -1.2266,   7.0625,   0.0684,  ...,  -2.4062,   3.7656,   1.0078]]],
+       device='cuda:0', dtype=torch.bfloat16, grad_fn=<MulBackward0>))])
+Error executing job with overrides: ['diffusion.time_reweighting=cart', 'data.train_files=./data/gsm8k/train.parquet', 'data.val_files=./data/gsm8k/test.parquet', 'data.max_length=32', 'data.prompt_key=question', 'data.response_key=answer', 'data.truncation=right', 'optim.lr=2e-6', 'data.micro_batch_size_per_gpu=1', 'data.perbatch_cutoff_type=random_with_input_pad', 'model.partial_huggingface=Qwen/Qwen3-0.6B', 'model.trust_remote_code=True', 'model.enable_gradient_checkpointing=True', 'trainer.logger=[console,wandb]', 'trainer.total_epochs=3']
+Traceback (most recent call last):
+  File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 1165, in main
+    trainer.fit()
+  File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 1086, in fit
+    metric = self.training_step(data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 861, in training_step
+    self._compute_loss_and_backward(batch=micro_batch, do_backward=False)
+  File "/home/zhang2968/Dream/src/trainer/fsdp_sft_trainer.py", line 785, in _compute_loss_and_backward
+    logits = output.logits
+             ^^^^^^^^^^^^^
+AttributeError: 'BaseModelOutputWithPast' object has no attribute 'logits'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

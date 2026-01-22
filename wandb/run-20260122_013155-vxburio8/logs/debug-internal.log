@@ -1,0 +1,11 @@
+{"time":"2026-01-22T01:31:56.025747391Z","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2026-01-22T01:31:56.227153988Z","level":"INFO","msg":"stream: created new stream","id":"vxburio8"}
+{"time":"2026-01-22T01:31:56.227228619Z","level":"INFO","msg":"handler: started","stream_id":"vxburio8"}
+{"time":"2026-01-22T01:31:56.227453283Z","level":"INFO","msg":"stream: started","id":"vxburio8"}
+{"time":"2026-01-22T01:31:56.227453854Z","level":"INFO","msg":"writer: started","stream_id":"vxburio8"}
+{"time":"2026-01-22T01:31:56.2274567Z","level":"INFO","msg":"sender: started","stream_id":"vxburio8"}
+{"time":"2026-01-22T01:32:37.536530442Z","level":"INFO","msg":"stream: closing","id":"vxburio8"}
+{"time":"2026-01-22T01:32:37.745937501Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-01-22T01:32:37.843837822Z","level":"INFO","msg":"handler: closed","stream_id":"vxburio8"}
+{"time":"2026-01-22T01:32:37.843909177Z","level":"INFO","msg":"sender: closed","stream_id":"vxburio8"}
+{"time":"2026-01-22T01:32:37.843918094Z","level":"INFO","msg":"stream: closed","id":"vxburio8"}
